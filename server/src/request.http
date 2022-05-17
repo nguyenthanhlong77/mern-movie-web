@@ -1,0 +1,154 @@
+ 
+
+
+###
+POST http://localhost:5000/api/auth/register
+Content-Type: application/json
+
+{
+    "username": "long031120",
+    "password": "PhamHoa290417",
+    "name" : "Nguyễn Thành Long",
+    "email": "nguyenthanhlong031120@gmail.com"
+}
+
+###
+POST http://localhost:5000/api/auth/login
+Content-Type: application/json
+
+{
+    "username": "long031120",
+    "password": "PhamHoa290417",
+    "email": "nguyenthanhlong031120@gmail.com"
+}
+
+###
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySUQiOiI2MjgwYjY2MzY1MjM1NmI2ZDU4YjkxZTgiLCJpYXQiOjE2NTI2MDI1Mjl9.nxhE2ufwMSgu7QIcQX_eMiMVC62Sl4F_UADEDDtkD-g
+
+{
+    "name" : "Án Mạng Trên Sông Nile",
+    "other_name" : "Death On The Nile",
+    "view" : 12700,
+    "type" : "Phim lẻ",
+    "year" : "2022",
+    "duration" : "120",
+    "description" : "Phim kể về vị thám tử Poirot bắt đầu chuyến hành trình tham quan Ai Cập tại chiếc du thuyền nhỏ dành cho giới nhà giàu. Trên chuyến đi, Poirot đã gặp gỡ được một cặp đôi nam thanh nữ tú, đang tận hưởng kỳ trăng mặt lãng mạn của mình là Linnet Doyle một triệu phú trẻ cùng với người chồng mới cưới Simon Doyle. Không hạnh phúc được bao lâu thì chuyến đi của họ bỗng bị phá hỏng sau khi phát hiện người tình cũ của Simon là Bellefort đã bám theo và phá vỡ mọi thứ.",
+    "cast" : [
+        {
+            "name": "Gal Gadot"
+        },
+        {
+            "name": "Tom Bateman"
+        },
+        {
+            "name": "Annette Bening"
+        },
+        {
+            "name": "Kenneth Branagh"
+        }
+    ],
+    "genres" : [
+        {
+            "name": "Hình sự"
+        },
+        {
+            "name": "Tâm lý"
+        },
+        {
+            "name": "Phiêu lưu"
+        }
+    ],
+    "language" : "Tiếng Việt",
+    "episode" : [
+        {
+            "name": "Full",
+            "URL_episode": "youtube.com/embed/4hhOZ1QWU4g"
+        }
+    ], 
+    "URL_image": "https://static.247phim.com/164560/conversions/623f23fa660f9_death-on-the-nile-poster-2022-e1644567548900-435_627.jpg"
+}
+
+
+
+###
+GET http://localhost:5000/api/movies
+
+
+//Get user
+###
+GET http://localhost:5000/api/user
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySUQiOiI2MjgwYjY2MzY1MjM1NmI2ZDU4YjkxZTgiLCJpYXQiOjE2NTI2MDI1Mjl9.nxhE2ufwMSgu7QIcQX_eMiMVC62Sl4F_UADEDDtkD-g
+
+
+
+
+//Get Pofile user
+###
+GET http://localhost:5000/api/user/profile
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySUQiOiI2MjgwYjY2MzY1MjM1NmI2ZDU4YjkxZTgiLCJpYXQiOjE2NTI2MDI1Mjl9.nxhE2ufwMSgu7QIcQX_eMiMVC62Sl4F_UADEDDtkD-g
+
+
+//Get list movies user liked
+###
+GET http://localhost:5000/api/user/like-movies
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySUQiOiI2MjViMGE5YzA3OThlZWQ5OTcyNTA5NzQiLCJpYXQiOjE2NTI1NjQyNTh9.soBDzoBKhHnPL-BDzHnrusQDm0EQ3Bv2fERnuNQ57vc
+
+//Update list movies user liked
+###
+POST http://localhost:5000/api/user/like-movies/new
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySUQiOiI2MjViMGE5YzA3OThlZWQ5OTcyNTA5NzQiLCJpYXQiOjE2NTI1NjQyNTh9.soBDzoBKhHnPL-BDzHnrusQDm0EQ3Bv2fERnuNQ57vc
+
+{
+    "movie_ID" : "625b2a6971a870a1bacc3791"
+}
+
+//Get list movies user followed
+###
+GET http://localhost:5000/api/user/follow-movies
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySUQiOiI2MjViMGE5YzA3OThlZWQ5OTcyNTA5NzQiLCJpYXQiOjE2NTI1NjQyNTh9.soBDzoBKhHnPL-BDzHnrusQDm0EQ3Bv2fERnuNQ57vc
+
+//Update list movies user followed
+###
+POST http://localhost:5000/api/user/follow-movies/new
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySUQiOiI2MjViMGE5YzA3OThlZWQ5OTcyNTA5NzQiLCJpYXQiOjE2NTI1NjQyNTh9.soBDzoBKhHnPL-BDzHnrusQDm0EQ3Bv2fERnuNQ57vc
+
+{
+    "movie_ID" : "625b2a6971a870a1bacc3791"
+}
+
+//Get list movies user viewed
+###
+GET http://localhost:5000/api/user/viewed-movies
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySUQiOiI2MjViMGE5YzA3OThlZWQ5OTcyNTA5NzQiLCJpYXQiOjE2NTI1NjQyNTh9.soBDzoBKhHnPL-BDzHnrusQDm0EQ3Bv2fERnuNQ57vc
+
+//Update list movies user viewed
+###
+POST http://localhost:5000/api/user/viewed-movies/new
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySUQiOiI2MjgwYjY2MzY1MjM1NmI2ZDU4YjkxZTgiLCJpYXQiOjE2NTI2MDI1Mjl9.nxhE2ufwMSgu7QIcQX_eMiMVC62Sl4F_UADEDDtkD-g
+
+{
+    "movie_ID" : "6280bb5e652356b6d58b91f5"
+}
+
+
+// update user's profile 
+###
+POST http://localhost:5000/api/user/profile/update
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySUQiOiI2MjgwYjY2MzY1MjM1NmI2ZDU4YjkxZTgiLCJpYXQiOjE2NTI2MDI1Mjl9.nxhE2ufwMSgu7QIcQX_eMiMVC62Sl4F_UADEDDtkD-g
+
+{
+    "name" : "Nguyen Thanh Long"
+}
+
+
+
